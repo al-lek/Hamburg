@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.connection1 = new Hamburg_namespace.Connection();
             this.PWoff_btn = new System.Windows.Forms.Button();
             this.PWon_btn = new System.Windows.Forms.Button();
             this.voltages_grpBox = new System.Windows.Forms.GroupBox();
@@ -37,7 +38,21 @@
             this.stability_chkBox = new System.Windows.Forms.CheckBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.opAmp1 = new Hamburg_namespace.OpAmp();
+            this.heater2 = new Hamburg_namespace.Heater();
+            this.RF_Psu1 = new Hamburg_namespace.HV_Psu();
+            this.opAmp2 = new Hamburg_namespace.OpAmp();
             this.sw2volt_lbl = new System.Windows.Forms.Label();
+            this.opAmp3 = new Hamburg_namespace.OpAmp();
+            this.opAmp4 = new Hamburg_namespace.OpAmp();
+            this.opAmp5 = new Hamburg_namespace.OpAmp();
+            this.opAmp6 = new Hamburg_namespace.OpAmp();
+            this.swOpAmp1 = new Hamburg_namespace.SwOpAmp();
+            this.heater1 = new Hamburg_namespace.Heater();
+            this.RF_Psu2 = new Hamburg_namespace.HV_Psu();
+            this.opAmp8 = new Hamburg_namespace.OpAmp();
+            this.opAmp9 = new Hamburg_namespace.OpAmp();
+            this.swOpAmp2 = new Hamburg_namespace.SwOpAmp();
             this.label2 = new System.Windows.Forms.Label();
             this.setAll_btn = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -74,15 +89,20 @@
             this.triggering_grpBox = new System.Windows.Forms.GroupBox();
             this.sync_rdBtn = new System.Windows.Forms.RadioButton();
             this.freq_lbl = new System.Windows.Forms.Label();
+            this.start_StopTrigger1 = new Hamburg_namespace.Start_StopTrigger();
             this.async_rdBtn = new System.Windows.Forms.RadioButton();
             this.freq_txtBox = new System.Windows.Forms.TextBox();
             this.press_grpBox = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pressureGauge4 = new Hamburg_namespace.PressureGauge();
+            this.pressureGauge3 = new Hamburg_namespace.PressureGauge();
+            this.pressureGauge2 = new Hamburg_namespace.PressureGauge();
+            this.pressureGauge1 = new Hamburg_namespace.PressureGauge();
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -105,26 +125,6 @@
             this.pump3 = new Hamburg_namespace.Pump();
             this.pump1 = new Hamburg_namespace.Pump();
             this.pump2 = new Hamburg_namespace.Pump();
-            this.start_StopTrigger1 = new Hamburg_namespace.Start_StopTrigger();
-            this.opAmp1 = new Hamburg_namespace.OpAmp();
-            this.heater2 = new Hamburg_namespace.Heater();
-            this.RF_Psu1 = new Hamburg_namespace.HV_Psu();
-            this.opAmp2 = new Hamburg_namespace.OpAmp();
-            this.opAmp3 = new Hamburg_namespace.OpAmp();
-            this.opAmp4 = new Hamburg_namespace.OpAmp();
-            this.opAmp5 = new Hamburg_namespace.OpAmp();
-            this.opAmp6 = new Hamburg_namespace.OpAmp();
-            this.swOpAmp1 = new Hamburg_namespace.SwOpAmp();
-            this.heater1 = new Hamburg_namespace.Heater();
-            this.RF_Psu2 = new Hamburg_namespace.HV_Psu();
-            this.opAmp8 = new Hamburg_namespace.OpAmp();
-            this.opAmp9 = new Hamburg_namespace.OpAmp();
-            this.swOpAmp2 = new Hamburg_namespace.SwOpAmp();
-            this.pressureGauge4 = new Hamburg_namespace.PressureGauge();
-            this.pressureGauge3 = new Hamburg_namespace.PressureGauge();
-            this.pressureGauge2 = new Hamburg_namespace.PressureGauge();
-            this.pressureGauge1 = new Hamburg_namespace.PressureGauge();
-            this.connection1 = new Hamburg_namespace.Connection();
             this.groupBox1.SuspendLayout();
             this.voltages_grpBox.SuspendLayout();
             this.timing_grpBox.SuspendLayout();
@@ -147,6 +147,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection / Power";
+            // 
+            // connection1
+            // 
+            this.connection1.Location = new System.Drawing.Point(30, 19);
+            this.connection1.MaximumSize = new System.Drawing.Size(75, 58);
+            this.connection1.MinimumSize = new System.Drawing.Size(75, 58);
+            this.connection1.Name = "connection1";
+            this.connection1.Size = new System.Drawing.Size(75, 58);
+            this.connection1.TabIndex = 1;
             // 
             // PWoff_btn
             // 
@@ -244,6 +253,58 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "AeroLens - Funnel RF [Vo-p]";
             // 
+            // opAmp1
+            // 
+            this.opAmp1.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out3;
+            this.opAmp1.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
+            this.opAmp1.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp1.Location = new System.Drawing.Point(86, 53);
+            this.opAmp1.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp1.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp1.Name = "opAmp1";
+            this.opAmp1.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.opAmp1.Size = new System.Drawing.Size(41, 20);
+            this.opAmp1.TabIndex = 2;
+            // 
+            // heater2
+            // 
+            this.heater2.GlobalPowerChangeEnabled = false;
+            this.heater2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.heater2.HTR_ID = Hamburg_namespace.HamburgBOX_HTR_ID.HTR2_ID;
+            this.heater2.Location = new System.Drawing.Point(86, 80);
+            this.heater2.MaxTemperature = 200D;
+            this.heater2.Name = "heater2";
+            this.heater2.PercentTempVariation = 10D;
+            this.heater2.Size = new System.Drawing.Size(66, 20);
+            this.heater2.TabIndex = 3;
+            // 
+            // RF_Psu1
+            // 
+            this.RF_Psu1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.RF_Psu1.HV_Psu_Id = Hamburg_namespace.HV_PSU_ID.RF2;
+            this.RF_Psu1.Location = new System.Drawing.Point(345, 17);
+            this.RF_Psu1.Max_Voltage = 150D;
+            this.RF_Psu1.Min_Voltage = 30D;
+            this.RF_Psu1.Name = "RF_Psu1";
+            this.RF_Psu1.PercentVoltageVariation = 10D;
+            this.RF_Psu1.Size = new System.Drawing.Size(65, 20);
+            this.RF_Psu1.TabIndex = 4;
+            // 
+            // opAmp2
+            // 
+            this.opAmp2.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out1;
+            this.opAmp2.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot2;
+            this.opAmp2.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp2.Location = new System.Drawing.Point(255, 53);
+            this.opAmp2.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp2.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp2.Name = "opAmp2";
+            this.opAmp2.Psu_Range = Hamburg_namespace.PSU_RANGE._Plus_Minus_150V;
+            this.opAmp2.Size = new System.Drawing.Size(41, 20);
+            this.opAmp2.TabIndex = 5;
+            // 
             // sw2volt_lbl
             // 
             this.sw2volt_lbl.AutoSize = true;
@@ -253,6 +314,138 @@
             this.sw2volt_lbl.Size = new System.Drawing.Size(77, 13);
             this.sw2volt_lbl.TabIndex = 15;
             this.sw2volt_lbl.Text = "Ion guide Gate";
+            // 
+            // opAmp3
+            // 
+            this.opAmp3.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out2;
+            this.opAmp3.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
+            this.opAmp3.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp3.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp3.Location = new System.Drawing.Point(255, 80);
+            this.opAmp3.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp3.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp3.Name = "opAmp3";
+            this.opAmp3.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.opAmp3.Size = new System.Drawing.Size(41, 20);
+            this.opAmp3.TabIndex = 6;
+            // 
+            // opAmp4
+            // 
+            this.opAmp4.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out4;
+            this.opAmp4.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
+            this.opAmp4.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp4.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp4.Location = new System.Drawing.Point(255, 107);
+            this.opAmp4.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp4.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp4.Name = "opAmp4";
+            this.opAmp4.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.opAmp4.Size = new System.Drawing.Size(41, 20);
+            this.opAmp4.TabIndex = 7;
+            // 
+            // opAmp5
+            // 
+            this.opAmp5.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out1;
+            this.opAmp5.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot4;
+            this.opAmp5.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp5.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp5.Location = new System.Drawing.Point(384, 53);
+            this.opAmp5.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp5.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp5.Name = "opAmp5";
+            this.opAmp5.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.opAmp5.Size = new System.Drawing.Size(41, 20);
+            this.opAmp5.TabIndex = 8;
+            // 
+            // opAmp6
+            // 
+            this.opAmp6.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out3;
+            this.opAmp6.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot4;
+            this.opAmp6.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp6.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp6.Location = new System.Drawing.Point(384, 80);
+            this.opAmp6.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp6.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp6.Name = "opAmp6";
+            this.opAmp6.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.opAmp6.Size = new System.Drawing.Size(41, 20);
+            this.opAmp6.TabIndex = 9;
+            // 
+            // swOpAmp1
+            // 
+            this.swOpAmp1.Hamburg_PercentVoltageVariation = 10D;
+            this.swOpAmp1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.swOpAmp1.Location = new System.Drawing.Point(384, 107);
+            this.swOpAmp1.Name = "swOpAmp1";
+            this.swOpAmp1.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.swOpAmp1.Size = new System.Drawing.Size(86, 20);
+            this.swOpAmp1.SwOpAmp_OutID = Hamburg_namespace.HamburgBOX_SWOPAMP_OUT_ID.Out3;
+            this.swOpAmp1.SwOpAmp_SlotNum = Hamburg_namespace.HamburgBOX_SWOPAMP_SLOT.Slot1;
+            this.swOpAmp1.TabIndex = 10;
+            // 
+            // heater1
+            // 
+            this.heater1.GlobalPowerChangeEnabled = false;
+            this.heater1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.heater1.HTR_ID = Hamburg_namespace.HamburgBOX_HTR_ID.HTR1_ID;
+            this.heater1.Location = new System.Drawing.Point(384, 134);
+            this.heater1.MaxTemperature = 200D;
+            this.heater1.Name = "heater1";
+            this.heater1.PercentTempVariation = 10D;
+            this.heater1.Size = new System.Drawing.Size(66, 20);
+            this.heater1.TabIndex = 11;
+            // 
+            // RF_Psu2
+            // 
+            this.RF_Psu2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.RF_Psu2.HV_Psu_Id = Hamburg_namespace.HV_PSU_ID.RF1;
+            this.RF_Psu2.Location = new System.Drawing.Point(600, 19);
+            this.RF_Psu2.Max_Voltage = 280D;
+            this.RF_Psu2.Min_Voltage = 20D;
+            this.RF_Psu2.Name = "RF_Psu2";
+            this.RF_Psu2.PercentVoltageVariation = 10D;
+            this.RF_Psu2.Size = new System.Drawing.Size(65, 20);
+            this.RF_Psu2.TabIndex = 12;
+            // 
+            // opAmp8
+            // 
+            this.opAmp8.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out1;
+            this.opAmp8.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
+            this.opAmp8.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp8.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp8.Location = new System.Drawing.Point(586, 53);
+            this.opAmp8.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp8.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp8.Name = "opAmp8";
+            this.opAmp8.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.opAmp8.Size = new System.Drawing.Size(41, 20);
+            this.opAmp8.TabIndex = 13;
+            // 
+            // opAmp9
+            // 
+            this.opAmp9.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out4;
+            this.opAmp9.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot2;
+            this.opAmp9.Hamburg_PercentVoltageVariation = 10D;
+            this.opAmp9.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.opAmp9.Location = new System.Drawing.Point(586, 80);
+            this.opAmp9.MaximumSize = new System.Drawing.Size(41, 21);
+            this.opAmp9.MinimumSize = new System.Drawing.Size(41, 21);
+            this.opAmp9.Name = "opAmp9";
+            this.opAmp9.Psu_Range = Hamburg_namespace.PSU_RANGE._Plus_Minus_150V;
+            this.opAmp9.Size = new System.Drawing.Size(41, 20);
+            this.opAmp9.TabIndex = 14;
+            // 
+            // swOpAmp2
+            // 
+            this.swOpAmp2.Hamburg_PercentVoltageVariation = 10D;
+            this.swOpAmp2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.swOpAmp2.Location = new System.Drawing.Point(586, 107);
+            this.swOpAmp2.Name = "swOpAmp2";
+            this.swOpAmp2.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
+            this.swOpAmp2.Size = new System.Drawing.Size(86, 20);
+            this.swOpAmp2.SwOpAmp_OutID = Hamburg_namespace.HamburgBOX_SWOPAMP_OUT_ID.Out4;
+            this.swOpAmp2.SwOpAmp_SlotNum = Hamburg_namespace.HamburgBOX_SWOPAMP_SLOT.Slot1;
+            this.swOpAmp2.TabIndex = 15;
             // 
             // label2
             // 
@@ -614,6 +807,14 @@
             this.freq_lbl.Tag = "";
             this.freq_lbl.Text = "Laser frequency [KHz]";
             // 
+            // start_StopTrigger1
+            // 
+            this.start_StopTrigger1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.start_StopTrigger1.Location = new System.Drawing.Point(242, 12);
+            this.start_StopTrigger1.Name = "start_StopTrigger1";
+            this.start_StopTrigger1.Size = new System.Drawing.Size(69, 52);
+            this.start_StopTrigger1.TabIndex = 53;
+            // 
             // async_rdBtn
             // 
             this.async_rdBtn.AutoSize = true;
@@ -651,25 +852,45 @@
             this.press_grpBox.TabStop = false;
             this.press_grpBox.Text = "Pressure";
             // 
-            // label6
+            // pressureGauge4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Enabled = false;
-            this.label6.Location = new System.Drawing.Point(135, 57);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Turbo 1";
+            this.pressureGauge4.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge4;
+            this.pressureGauge4.GaugeType = Hamburg_namespace.GaugeType.AutoDetect;
+            this.pressureGauge4.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.pressureGauge4.Location = new System.Drawing.Point(54, 105);
+            this.pressureGauge4.Name = "pressureGauge4";
+            this.pressureGauge4.Size = new System.Drawing.Size(166, 26);
+            this.pressureGauge4.TabIndex = 1;
             // 
-            // label5
+            // pressureGauge3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Enabled = false;
-            this.label5.Location = new System.Drawing.Point(135, 83);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Turbo 2";
+            this.pressureGauge3.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge3;
+            this.pressureGauge3.GaugeType = Hamburg_namespace.GaugeType.AutoDetect;
+            this.pressureGauge3.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.pressureGauge3.Location = new System.Drawing.Point(54, 73);
+            this.pressureGauge3.Name = "pressureGauge3";
+            this.pressureGauge3.Size = new System.Drawing.Size(166, 26);
+            this.pressureGauge3.TabIndex = 1;
+            // 
+            // pressureGauge2
+            // 
+            this.pressureGauge2.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge2;
+            this.pressureGauge2.GaugeType = Hamburg_namespace.GaugeType.STR_GAUGE;
+            this.pressureGauge2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.pressureGauge2.Location = new System.Drawing.Point(54, 41);
+            this.pressureGauge2.Name = "pressureGauge2";
+            this.pressureGauge2.Size = new System.Drawing.Size(166, 26);
+            this.pressureGauge2.TabIndex = 1;
+            // 
+            // pressureGauge1
+            // 
+            this.pressureGauge1.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge1;
+            this.pressureGauge1.GaugeType = Hamburg_namespace.GaugeType.AutoDetect;
+            this.pressureGauge1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
+            this.pressureGauge1.Location = new System.Drawing.Point(54, 9);
+            this.pressureGauge1.Name = "pressureGauge1";
+            this.pressureGauge1.Size = new System.Drawing.Size(166, 26);
+            this.pressureGauge1.TabIndex = 1;
             // 
             // label13
             // 
@@ -706,6 +927,26 @@
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "AeroLens";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Enabled = false;
+            this.label6.Location = new System.Drawing.Point(135, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Turbo 1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.Location = new System.Drawing.Point(135, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Turbo 2";
             // 
             // label4
             // 
@@ -928,247 +1169,6 @@
             this.pump2.Size = new System.Drawing.Size(20, 20);
             this.pump2.TabIndex = 1;
             // 
-            // start_StopTrigger1
-            // 
-            this.start_StopTrigger1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.start_StopTrigger1.Location = new System.Drawing.Point(242, 12);
-            this.start_StopTrigger1.Name = "start_StopTrigger1";
-            this.start_StopTrigger1.Size = new System.Drawing.Size(69, 52);
-            this.start_StopTrigger1.TabIndex = 53;
-            // 
-            // opAmp1
-            // 
-            this.opAmp1.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out3;
-            this.opAmp1.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
-            this.opAmp1.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp1.Location = new System.Drawing.Point(86, 53);
-            this.opAmp1.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp1.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp1.Name = "opAmp1";
-            this.opAmp1.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.opAmp1.Size = new System.Drawing.Size(41, 20);
-            this.opAmp1.TabIndex = 2;
-            // 
-            // heater2
-            // 
-            this.heater2.GlobalPowerChangeEnabled = false;
-            this.heater2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.heater2.HTR_ID = Hamburg_namespace.HamburgBOX_HTR_ID.HTR2_ID;
-            this.heater2.Location = new System.Drawing.Point(86, 80);
-            this.heater2.MaxTemperature = 200D;
-            this.heater2.Name = "heater2";
-            this.heater2.PercentTempVariation = 10D;
-            this.heater2.Size = new System.Drawing.Size(66, 20);
-            this.heater2.TabIndex = 3;
-            // 
-            // RF_Psu1
-            // 
-            this.RF_Psu1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.RF_Psu1.HV_Psu_Id = Hamburg_namespace.HV_PSU_ID.RF2;
-            this.RF_Psu1.Location = new System.Drawing.Point(345, 17);
-            this.RF_Psu1.Max_Voltage = 150D;
-            this.RF_Psu1.Min_Voltage = 30D;
-            this.RF_Psu1.Name = "RF_Psu1";
-            this.RF_Psu1.PercentVoltageVariation = 10D;
-            this.RF_Psu1.Size = new System.Drawing.Size(65, 20);
-            this.RF_Psu1.TabIndex = 4;
-            // 
-            // opAmp2
-            // 
-            this.opAmp2.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out1;
-            this.opAmp2.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot2;
-            this.opAmp2.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp2.Location = new System.Drawing.Point(255, 53);
-            this.opAmp2.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp2.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp2.Name = "opAmp2";
-            this.opAmp2.Psu_Range = Hamburg_namespace.PSU_RANGE._Plus_Minus_150V;
-            this.opAmp2.Size = new System.Drawing.Size(41, 20);
-            this.opAmp2.TabIndex = 5;
-            // 
-            // opAmp3
-            // 
-            this.opAmp3.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out2;
-            this.opAmp3.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
-            this.opAmp3.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp3.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp3.Location = new System.Drawing.Point(255, 80);
-            this.opAmp3.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp3.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp3.Name = "opAmp3";
-            this.opAmp3.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.opAmp3.Size = new System.Drawing.Size(41, 20);
-            this.opAmp3.TabIndex = 6;
-            // 
-            // opAmp4
-            // 
-            this.opAmp4.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out4;
-            this.opAmp4.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
-            this.opAmp4.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp4.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp4.Location = new System.Drawing.Point(255, 107);
-            this.opAmp4.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp4.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp4.Name = "opAmp4";
-            this.opAmp4.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.opAmp4.Size = new System.Drawing.Size(41, 20);
-            this.opAmp4.TabIndex = 7;
-            // 
-            // opAmp5
-            // 
-            this.opAmp5.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out1;
-            this.opAmp5.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot4;
-            this.opAmp5.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp5.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp5.Location = new System.Drawing.Point(384, 53);
-            this.opAmp5.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp5.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp5.Name = "opAmp5";
-            this.opAmp5.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.opAmp5.Size = new System.Drawing.Size(41, 20);
-            this.opAmp5.TabIndex = 8;
-            // 
-            // opAmp6
-            // 
-            this.opAmp6.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out3;
-            this.opAmp6.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot4;
-            this.opAmp6.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp6.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp6.Location = new System.Drawing.Point(384, 80);
-            this.opAmp6.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp6.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp6.Name = "opAmp6";
-            this.opAmp6.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.opAmp6.Size = new System.Drawing.Size(41, 20);
-            this.opAmp6.TabIndex = 9;
-            // 
-            // swOpAmp1
-            // 
-            this.swOpAmp1.Hamburg_PercentVoltageVariation = 10D;
-            this.swOpAmp1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.swOpAmp1.Location = new System.Drawing.Point(384, 107);
-            this.swOpAmp1.Name = "swOpAmp1";
-            this.swOpAmp1.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.swOpAmp1.Size = new System.Drawing.Size(86, 20);
-            this.swOpAmp1.SwOpAmp_OutID = Hamburg_namespace.HamburgBOX_SWOPAMP_OUT_ID.Out3;
-            this.swOpAmp1.SwOpAmp_SlotNum = Hamburg_namespace.HamburgBOX_SWOPAMP_SLOT.Slot1;
-            this.swOpAmp1.TabIndex = 10;
-            // 
-            // heater1
-            // 
-            this.heater1.GlobalPowerChangeEnabled = false;
-            this.heater1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.heater1.HTR_ID = Hamburg_namespace.HamburgBOX_HTR_ID.HTR1_ID;
-            this.heater1.Location = new System.Drawing.Point(384, 134);
-            this.heater1.MaxTemperature = 200D;
-            this.heater1.Name = "heater1";
-            this.heater1.PercentTempVariation = 10D;
-            this.heater1.Size = new System.Drawing.Size(66, 20);
-            this.heater1.TabIndex = 11;
-            // 
-            // RF_Psu2
-            // 
-            this.RF_Psu2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.RF_Psu2.HV_Psu_Id = Hamburg_namespace.HV_PSU_ID.RF1;
-            this.RF_Psu2.Location = new System.Drawing.Point(600, 19);
-            this.RF_Psu2.Max_Voltage = 280D;
-            this.RF_Psu2.Min_Voltage = 20D;
-            this.RF_Psu2.Name = "RF_Psu2";
-            this.RF_Psu2.PercentVoltageVariation = 10D;
-            this.RF_Psu2.Size = new System.Drawing.Size(65, 20);
-            this.RF_Psu2.TabIndex = 12;
-            // 
-            // opAmp8
-            // 
-            this.opAmp8.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out1;
-            this.opAmp8.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot3;
-            this.opAmp8.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp8.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp8.Location = new System.Drawing.Point(586, 53);
-            this.opAmp8.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp8.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp8.Name = "opAmp8";
-            this.opAmp8.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.opAmp8.Size = new System.Drawing.Size(41, 20);
-            this.opAmp8.TabIndex = 13;
-            // 
-            // opAmp9
-            // 
-            this.opAmp9.Hamburg_OpAmp_OutID = Hamburg_namespace.HamburgBOX_OPAMP_OUT_ID.Out4;
-            this.opAmp9.Hamburg_OpAmp_SlotNum = Hamburg_namespace.HamburgBOX_OPAMP_SLOT.Slot2;
-            this.opAmp9.Hamburg_PercentVoltageVariation = 10D;
-            this.opAmp9.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.opAmp9.Location = new System.Drawing.Point(586, 80);
-            this.opAmp9.MaximumSize = new System.Drawing.Size(41, 21);
-            this.opAmp9.MinimumSize = new System.Drawing.Size(41, 21);
-            this.opAmp9.Name = "opAmp9";
-            this.opAmp9.Psu_Range = Hamburg_namespace.PSU_RANGE._Plus_Minus_150V;
-            this.opAmp9.Size = new System.Drawing.Size(41, 20);
-            this.opAmp9.TabIndex = 14;
-            // 
-            // swOpAmp2
-            // 
-            this.swOpAmp2.Hamburg_PercentVoltageVariation = 10D;
-            this.swOpAmp2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.swOpAmp2.Location = new System.Drawing.Point(586, 107);
-            this.swOpAmp2.Name = "swOpAmp2";
-            this.swOpAmp2.Psu_Range = Hamburg_namespace.PSU_RANGE._300V;
-            this.swOpAmp2.Size = new System.Drawing.Size(86, 20);
-            this.swOpAmp2.SwOpAmp_OutID = Hamburg_namespace.HamburgBOX_SWOPAMP_OUT_ID.Out4;
-            this.swOpAmp2.SwOpAmp_SlotNum = Hamburg_namespace.HamburgBOX_SWOPAMP_SLOT.Slot1;
-            this.swOpAmp2.TabIndex = 15;
-            // 
-            // pressureGauge4
-            // 
-            this.pressureGauge4.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge4;
-            this.pressureGauge4.GaugeType = Hamburg_namespace.GaugeType.AutoDetect;
-            this.pressureGauge4.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.pressureGauge4.Location = new System.Drawing.Point(54, 105);
-            this.pressureGauge4.Name = "pressureGauge4";
-            this.pressureGauge4.Size = new System.Drawing.Size(166, 26);
-            this.pressureGauge4.TabIndex = 1;
-            // 
-            // pressureGauge3
-            // 
-            this.pressureGauge3.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge3;
-            this.pressureGauge3.GaugeType = Hamburg_namespace.GaugeType.AutoDetect;
-            this.pressureGauge3.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.pressureGauge3.Location = new System.Drawing.Point(54, 73);
-            this.pressureGauge3.Name = "pressureGauge3";
-            this.pressureGauge3.Size = new System.Drawing.Size(166, 26);
-            this.pressureGauge3.TabIndex = 1;
-            // 
-            // pressureGauge2
-            // 
-            this.pressureGauge2.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge2;
-            this.pressureGauge2.GaugeType = Hamburg_namespace.GaugeType.STR_GAUGE;
-            this.pressureGauge2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.pressureGauge2.Location = new System.Drawing.Point(54, 41);
-            this.pressureGauge2.Name = "pressureGauge2";
-            this.pressureGauge2.Size = new System.Drawing.Size(166, 26);
-            this.pressureGauge2.TabIndex = 1;
-            // 
-            // pressureGauge1
-            // 
-            this.pressureGauge1.GaugeNumber = Hamburg_namespace.GaugeNum.Gauge1;
-            this.pressureGauge1.GaugeType = Hamburg_namespace.GaugeType.AutoDetect;
-            this.pressureGauge1.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
-            this.pressureGauge1.Location = new System.Drawing.Point(54, 9);
-            this.pressureGauge1.Name = "pressureGauge1";
-            this.pressureGauge1.Size = new System.Drawing.Size(166, 26);
-            this.pressureGauge1.TabIndex = 1;
-            // 
-            // connection1
-            // 
-            this.connection1.Location = new System.Drawing.Point(30, 19);
-            this.connection1.MaximumSize = new System.Drawing.Size(75, 58);
-            this.connection1.MinimumSize = new System.Drawing.Size(75, 58);
-            this.connection1.Name = "connection1";
-            this.connection1.Size = new System.Drawing.Size(75, 58);
-            this.connection1.TabIndex = 1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1183,7 +1183,7 @@
             this.Controls.Add(this.press_grpBox);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "RF transfer line v0.5";
+            this.Text = "RF transfer line v0.6";
             this.groupBox1.ResumeLayout(false);
             this.voltages_grpBox.ResumeLayout(false);
             this.voltages_grpBox.PerformLayout();

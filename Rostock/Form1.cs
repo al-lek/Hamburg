@@ -18,6 +18,7 @@ using OxyPlot.Series;
 using OxyPlot.WindowsForms;
 
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Hamburg_namespace
 {
@@ -33,18 +34,31 @@ namespace Hamburg_namespace
 
         public Form1()
         {
-            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
-            {
-                string resourceName = new AssemblyName(args.Name).Name + ".dll";
-                string resource = Array.Find(this.GetType().Assembly.GetManifestResourceNames(), element => element.EndsWith(resourceName));
+            //ListEmbeddedResourceNames();
+            //HookResolver hk = new HookResolver();
 
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource))
-                {
-                    Byte[] assemblyData = new Byte[stream.Length];
-                    stream.Read(assemblyData, 0, assemblyData.Length);
-                    return Assembly.Load(assemblyData);
-                }
-            };
+            //AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
+            //AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            //{
+            //    // string resourceName = new AssemblyName(args.Name).Name + ".dll";
+            //    //string resource = Array.Find(this.GetType().Assembly.GetManifestResourceNames(), element => element.EndsWith(resourceName));
+
+            //    //String resourceName = "AssemblyLoadingAndReflection." + new AssemblyName(args.Name).Name + ".dll";
+
+            //    //String thisExe = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+            //    //System.Reflection.AssemblyName embeddedAssembly = new System.Reflection.AssemblyName(args.Name);
+            //    //String resourceName = thisExe + "." + embeddedAssembly.Name + ".dll";
+
+            //    using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(dlls[dll_idx]))
+            //    {
+            //        dll_idx++;
+            //        Byte[] assemblyData = new Byte[stream.Length];
+            //        stream.Read(assemblyData, 0, assemblyData.Length);
+            //        return Assembly.Load(assemblyData);
+
+            //    }
+            //};
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
 
@@ -579,7 +593,7 @@ namespace Hamburg_namespace
             // get the times
             double funnelDelay = 0.001, funnelWidth = 0.001, gateDelay = 0.001, gateWidth = 0.001, pulseDelay = 0.001, pulseWidth = 0.001;
             // break if txtbox is empty
-            foreach (TextBox txtBox in timing_grpBox.Controls.OfType<TextBox>()) if (txtBox.Text == "") return;
+            foreach (TextBox txtBox in GetControls(timing_grpBox).OfType<TextBox>()) if (txtBox.Text == "") return;
 
             if (GetVoltage(swOpAmp1, 0) != GetVoltage(swOpAmp1, 1)) { funnelDelay = Convert.ToDouble(sw1delay1_txtBox.Text); funnelWidth = Convert.ToDouble(sw1width_txtBox.Text); }
             if (GetVoltage(swOpAmp2, 0) != GetVoltage(swOpAmp2, 1)) { gateDelay = Convert.ToDouble(sw2delay1_txtBox.Text); gateWidth = Convert.ToDouble(sw2width_txtBox.Text); }
@@ -981,7 +995,47 @@ namespace Hamburg_namespace
         //    }
 
         //}
+        static void ListEmbeddedResourceNames()
+        {
+            Trace.WriteLine("Listing Embedded Resource Names");
+
+            foreach (var resource in Assembly.GetExecutingAssembly().GetManifestResourceNames())
+                Trace.WriteLine("Resource: " + resource);
+        }
+
+        public class HookResolver
+        {
+            Dictionary<string, Assembly> _loaded;
+
+            public HookResolver()
+            {
+                _loaded = new Dictionary<string, Assembly>(StringComparer.OrdinalIgnoreCase);
+                AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
+            }
+
+            System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+            {
+                string name = args.Name.Split(',')[0];
+                Assembly asm;
+                lock (_loaded)
+                {
+                    if (!_loaded.TryGetValue(name, out asm))
+                    {
+                        using (Stream io = this.GetType().Assembly.GetManifestResourceStream(name))
+                        {
+                            byte[] bytes = new BinaryReader(io).ReadBytes((int)io.Length);
+                            asm = Assembly.Load(bytes);
+                            _loaded.Add(name, asm);
+                        }
+                    }
+                }
+                return asm;
+            }
+        }
+
         #endregion
+
+
 
 
     }

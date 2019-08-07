@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft\ILMerge\ilmerge.exe" "C:\temp\Release\Hamburg.exe" "C:\temp\Release\OxyPlot.dll" "C:\temp\Release\OxyPlot.WindowsForms.dll" "C:\temp\Release\FTD2XX_NET.dll" /out:"C:\temp\Hamburg v0.6.exe" /target:winexe /ndebug /targetplatform:"v4,c:\Windows\Microsoft.NET\Framework\v4.0.30319"
