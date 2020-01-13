@@ -400,7 +400,7 @@
             this.RF_Psu2.Hamburgbox_Address = Hamburg_namespace.BOX_ADDRESS.HamburgBox_1;
             this.RF_Psu2.HV_Psu_Id = Hamburg_namespace.HV_PSU_ID.RF1;
             this.RF_Psu2.Location = new System.Drawing.Point(600, 19);
-            this.RF_Psu2.Max_Voltage = 280D;
+            this.RF_Psu2.Max_Voltage = 600D;
             this.RF_Psu2.Min_Voltage = 20D;
             this.RF_Psu2.Name = "RF_Psu2";
             this.RF_Psu2.PercentVoltageVariation = 10D;
